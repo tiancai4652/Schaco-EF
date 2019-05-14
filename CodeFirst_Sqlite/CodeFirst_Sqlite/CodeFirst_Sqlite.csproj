@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBContext\DBContext.cs" />
+    <Compile Include="EFUsage\CURD.cs" />
     <Compile Include="Model\Course\Chinese.cs" />
     <Compile Include="Model\Course\CourseBase.cs" />
     <Compile Include="Model\Course\English.cs" />
