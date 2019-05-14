@@ -20,5 +20,6 @@ namespace CodeFirst_Sqlite.Model
         //[Key]
         //public string ID { get  ; set  ; }
         //public  IEnumerable<Student> Students { get; set; }
+        public string Extend { get; set; }
     }
 }
