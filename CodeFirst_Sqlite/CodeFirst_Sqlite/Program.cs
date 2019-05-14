@@ -19,6 +19,7 @@ namespace CodeFirst_Sqlite
         private static void Main()
         {
             DBContext.DBContext x = new DBContext.DBContext();
+            x.Database.Log = (c) => { System.Diagnostics.Debug.WriteLine("0514:"+c); };
             var s = x.EMei.FirstOrDefault();
             var s1 = x.WuDang.Include(t => t.Students).FirstOrDefault();
             var s2 = x.ShaoLin.Include(t => t.Students.Select(r=>r.Weapon)).FirstOrDefault();

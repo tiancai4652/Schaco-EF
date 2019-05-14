@@ -71,6 +71,7 @@
     <Compile Include="Model\Course\Chinese.cs" />
     <Compile Include="Model\Course\CourseBase.cs" />
     <Compile Include="Model\Course\English.cs" />
+    <Compile Include="Model\Course\Paint.cs" />
     <Compile Include="Model\Course\Sport.cs" />
     <Compile Include="Model\InterfaceBase\Iid.cs" />
     <Compile Include="Model\School\EMei.cs" />

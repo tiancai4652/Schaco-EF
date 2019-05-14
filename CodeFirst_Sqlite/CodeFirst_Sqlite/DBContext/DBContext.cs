@@ -16,6 +16,7 @@ namespace CodeFirst_Sqlite.DBContext
         public IDbSet<Chinese> Chinese { get; set; }
         public IDbSet<English> English { get; set; }
         public IDbSet<Sport> Sport { get; set; }
+        public IDbSet<Paint> Paint { get; set; }
 
         public IDbSet<EMei> EMei { get; set; }
         public IDbSet<ShaoLin> ShaoLin { get; set; }
