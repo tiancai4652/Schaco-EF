@@ -2,6 +2,7 @@ namespace CodeFirst_Sqlite.Migrations
 {
     using CodeFirst_Sqlite.Model;
     using CodeFirst_Sqlite.Model.Course;
+    using CodeFirst_Sqlite.Model.Weapon;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -14,7 +15,7 @@ namespace CodeFirst_Sqlite.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            //AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationDataLossAllowed = true;
             SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
         }
 
@@ -24,14 +25,14 @@ namespace CodeFirst_Sqlite.Migrations
             English english = new English() { Name = "Ó¢Óï" };
             Sport sport = new Sport() { Name = "ÌåÓý" };
 
-            Hand hand1 = new Hand() { Name = "½ð¶¥ÃàÕÆ" };
-            Hand hand2 = new Hand() { Name = "ÐÄ·ðÕÆ" };
+            Weapon hand1 = new Weapon() { Name = "½ð¶¥ÃàÕÆ", Type = 0 };
+            Weapon hand2 = new Weapon() { Name = "ÐÄ·ðÕÆ", Type = 0 };
 
-            Stick stick1 = new Stick() { Name = "Î¤ÍÓ¹÷·¨" };
-            Stick stick2 = new Stick() { Name = "·üÄ§¹÷·¨" };
+            Weapon stick1 = new Weapon() { Name = "Î¤ÍÓ¹÷·¨", Type = 1 };
+            Weapon stick2 = new Weapon() { Name = "·üÄ§¹÷·¨", Type = 1 };
 
-            Sword sword1 = new Sword() { Name = "Ì«¼«½£·¨" };
-            Sword sword2 = new Sword() { Name = "Á½ÒÇ½£·¨" };
+            Weapon sword1 = new Weapon() { Name = "Ì«¼«½£·¨", Type = 2 };
+            Weapon sword2 = new Weapon() { Name = "Á½ÒÇ½£·¨", Type = 2 };
 
             List<CourseBase> coursesList1 = new List<CourseBase>() { chinese, english };
             List<CourseBase> coursesList2 = new List<CourseBase>() { chinese, sport };
@@ -55,31 +56,32 @@ namespace CodeFirst_Sqlite.Migrations
             WuDang wudang = new WuDang() { Name = "Îäµ±", Students = new List<Student> { student5, student6 } };
 
 
-            context.Set<Chinese>().Add(chinese);
-            context.Set<English>().Add(english);
-            context.Set<Sport>().Add(sport);
+            context.Set<Chinese>().AddOrUpdate(chinese);
+            context.Set<English>().AddOrUpdate(english);
+            context.Set<Sport>().AddOrUpdate(sport);
 
-            context.Set<Hand>().Add(hand1);
-            context.Set<Hand>().Add(hand2);
+            context.Set<Weapon>().AddOrUpdate(hand1);
+            context.Set<Weapon>().AddOrUpdate(hand2);
 
-            context.Set<Stick>().Add(stick1);
-            context.Set<Stick>().Add(stick2);
+            context.Set<Weapon>().AddOrUpdate(stick1);
+            context.Set<Weapon>().AddOrUpdate(stick2);
 
-            context.Set<Sword>().Add(sword1);
-            context.Set<Sword>().Add(sword2);
+            context.Set<Weapon>().AddOrUpdate(sword1);
+            context.Set<Weapon>().AddOrUpdate(sword2);
 
-            context.Set<Student>().Add(student1);
-            context.Set<Student>().Add(student2);
-            context.Set<Student>().Add(student3);
-            context.Set<Student>().Add(student4);
-            context.Set<Student>().Add(student5);
-            context.Set<Student>().Add(student6);
+            context.Set<Student>().AddOrUpdate(student1);
+            context.Set<Student>().AddOrUpdate(student2);
+            context.Set<Student>().AddOrUpdate(student3);
+            context.Set<Student>().AddOrUpdate(student4);
+            context.Set<Student>().AddOrUpdate(student5);
+            context.Set<Student>().AddOrUpdate(student6);
 
-            context.Set<EMei>().Add(emei);
-            context.Set<ShaoLin>().Add(shaolin);
-            context.Set<WuDang>().Add(wudang);
+            context.Set<EMei>().AddOrUpdate(emei);
+            context.Set<ShaoLin>().AddOrUpdate(shaolin);
+            context.Set<WuDang>().AddOrUpdate(wudang);
 
             int x = context.SaveChanges();
+
         }
     }
 }

@@ -42,9 +42,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="SQLite.CodeFirst, Version=1.5.2.28, Culture=neutral, PublicKeyToken=eb96ba0a78d831a7, processorArchitecture=MSIL">
-      <HintPath>..\packages\SQLite.CodeFirst.1.5.2.28\lib\net45\SQLite.CodeFirst.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -76,17 +73,14 @@
     <Compile Include="Model\Course\English.cs" />
     <Compile Include="Model\Course\Sport.cs" />
     <Compile Include="Model\InterfaceBase\Iid.cs" />
-    <Compile Include="Model\Weapon\Hand.cs" />
     <Compile Include="Model\School\EMei.cs" />
     <Compile Include="Model\Course\ICourse.cs" />
-    <Compile Include="Model\Weapon\IWeapon.cs" />
     <Compile Include="Model\School\ISchool.cs" />
     <Compile Include="Model\School\ShaoLin.cs" />
-    <Compile Include="Model\Weapon\Stick.cs" />
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\School\WuDang.cs" />
-    <Compile Include="Model\Weapon\Sword.cs" />
-    <Compile Include="Model\Weapon\WeaponBase.cs" />
+    <Compile Include="Model\Weapon\Weapon.cs" />
+    <Compile Include="Model\Weapon\WeaponType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,7 +15,7 @@ namespace CodeFirst_Sqlite.Model
             ID = Guid.NewGuid().ToString("N");
         }
         public string Name { get; set; }
-        public IWeapon Weapon { get; set; }
+        public Weapon.Weapon Weapon { get; set; }
         public string ID { get; set; }
         public virtual ICollection<CourseBase> Courses { get; set; }
     }
