@@ -19,7 +19,7 @@ namespace CodeFirst_Sqlite
         private static void Main()
         {
             DBContext.DBContext x = new DBContext.DBContext();
-            var s = x.EMei.Include(t => t.Students).FirstOrDefault();
+            var s = x.EMei.FirstOrDefault();
             var s1 = x.WuDang.Include(t => t.Students).FirstOrDefault();
             var s2 = x.ShaoLin.Include(t => t.Students).FirstOrDefault();
             //var s3 = x.Student.Include(t => t.Courses).ThenInclude(m => m.Weapon).FirstOrDefault();

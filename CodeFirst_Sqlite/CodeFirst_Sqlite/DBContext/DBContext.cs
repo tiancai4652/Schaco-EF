@@ -4,6 +4,7 @@ using SQLite.CodeFirst;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,11 +34,21 @@ namespace CodeFirst_Sqlite.DBContext
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-            //var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<DBContext>(modelBuilder);
-            //var sqliteConnectionInitializer = new SqliteDropCreateDatabaseWhenModelChanges<DBContext>(modelBuilder);
-            var sqliteConnectionInitializer = new MyDbContextInitializer(modelBuilder);
-            Database.SetInitializer(sqliteConnectionInitializer);
+            #region
+
+            //base.OnModelCreating(modelBuilder);
+            //var model = modelBuilder.Build(Database.Connection);
+            //IDatabaseCreator sqliteDatabaseCreator = new SqliteDatabaseCreator();
+            //sqliteDatabaseCreator.Create(Database, model);
+
+
+            //var sqliteConnectionInitializer = new MyDbContextInitializer(modelBuilder);
+            //Database.SetInitializer(sqliteConnectionInitializer);
+
+
+
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>());
+
 
             //modelBuilder.Entity<Student>()
             //    .HasMany<CourseBase>(s => s.Courses)
@@ -48,12 +59,40 @@ namespace CodeFirst_Sqlite.DBContext
             //    cs.MapRightKey("CourseRefId");
             //    cs.ToTable("StudentCourse");
             //});
+
+            #endregion
+
+            //var dbPath = Database.Connection.ConnectionString.Replace("Data Source=","");
+            //if (!File.Exists(dbPath))
+            //{
+            //    ToCreatDB(modelBuilder);
+            //}
+            //else
+            //{
+            //    ToCheckMigrate();
+            //}
+            //var sqliteConnectionInitializer = new MyDbContextInitializer(modelBuilder);
+            //Database.SetInitializer(sqliteConnectionInitializer);
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>());
+
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>(true));
+        }
+
+        void ToCreatDB(DbModelBuilder modelBuilder)
+        {
+            var sqliteConnectionInitializer = new MyDbContextInitializer(modelBuilder);
+            Database.SetInitializer(sqliteConnectionInitializer);
+        }
+
+        void ToCheckMigrate()
+        {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>());
         }
 
 
     }
 
-    public class MyDbContextInitializer : SqliteDropCreateDatabaseWhenModelChanges<DBContext>
+    public class MyDbContextInitializer : SqliteCreateDatabaseIfNotExists<DBContext>
     {
         public MyDbContextInitializer(DbModelBuilder modelBuilder)
             : base(modelBuilder) { }
