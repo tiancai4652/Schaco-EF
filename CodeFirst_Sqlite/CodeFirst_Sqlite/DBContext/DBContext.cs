@@ -27,7 +27,7 @@ namespace CodeFirst_Sqlite.DBContext
 
         public IDbSet<Student> Student { get; set; }
 
-        public DBContext() : base("name=SqliteConnectionString")
+        public DBContext() : base("SC")
         {
 
         }
