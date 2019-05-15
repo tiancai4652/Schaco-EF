@@ -24,5 +24,7 @@ namespace CodeFirst_Sqlite.Model
         //public virtual IEnumerable<Student> Students { get; set; }
 
         public string Extend { get; set; }
+
+        public string Extend1 { get; set; }
     }
 }
