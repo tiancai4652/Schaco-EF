@@ -75,9 +75,9 @@
     <Compile Include="Migrations\201905150601182_AddChineseExtend1.Designer.cs">
       <DependentUpon>201905150601182_AddChineseExtend1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905150604145_AddTablePaint.cs" />
-    <Compile Include="Migrations\201905150604145_AddTablePaint.Designer.cs">
-      <DependentUpon>201905150604145_AddTablePaint.cs</DependentUpon>
+    <Compile Include="Migrations\201905150701219_AddTablePaint.cs" />
+    <Compile Include="Migrations\201905150701219_AddTablePaint.Designer.cs">
+      <DependentUpon>201905150701219_AddTablePaint.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Course\Chinese.cs" />
@@ -110,8 +110,8 @@
     <EmbeddedResource Include="Migrations\201905150601182_AddChineseExtend1.resx">
       <DependentUpon>201905150601182_AddChineseExtend1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905150604145_AddTablePaint.resx">
-      <DependentUpon>201905150604145_AddTablePaint.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905150701219_AddTablePaint.resx">
+      <DependentUpon>201905150701219_AddTablePaint.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

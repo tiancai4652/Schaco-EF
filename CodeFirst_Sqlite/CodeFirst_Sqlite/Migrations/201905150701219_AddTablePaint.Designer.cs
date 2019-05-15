@@ -13,7 +13,7 @@ namespace CodeFirst_Sqlite.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201905150604145_AddTablePaint"; }
+            get { return "201905150701219_AddTablePaint"; }
         }
         
         string IMigrationMetadata.Source
