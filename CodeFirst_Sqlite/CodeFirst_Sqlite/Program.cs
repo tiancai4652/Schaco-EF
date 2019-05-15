@@ -10,6 +10,12 @@ namespace CodeFirst_Sqlite
 {
     public static class Program
     {
+
+        //https://www.nuget.org/packages/EntityFramework/6.3.0-preview5-19254-05
+        //Install-Package EntityFramework -Version 6.3.0-preview5-19254-05 To Get EF6.3
+
+
+
         //1 对1 Student-Weapon
 
         //1对多 Student-SChool
