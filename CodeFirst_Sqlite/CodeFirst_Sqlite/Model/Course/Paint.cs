@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CodeFirst_Sqlite.Model.Course
 {
-    [Table("Chinese")]
+    [Table("Paint")]
     public class Paint : CourseBase
     {
         public Paint()
