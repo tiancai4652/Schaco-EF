@@ -30,6 +30,9 @@ namespace CodeFirst_Sqlite
             var s1 = x.WuDang.Include(t => t.Students).FirstOrDefault();
             var s2 = x.ShaoLin.Include(t => t.Students.Select(r=>r.Weapon)).FirstOrDefault();
             //var s3 = x.Student.Include(t => t.Courses).ThenInclude(m => m.Weapon).FirstOrDefault();
+
+
+            var s3 = x.StudentWeaponView.FirstOrDefault();
         }
     }
 }

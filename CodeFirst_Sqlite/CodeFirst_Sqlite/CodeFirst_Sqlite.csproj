@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201905150701219_AddTablePaint.Designer.cs">
       <DependentUpon>201905150701219_AddTablePaint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905150855494_CreatViewStuentWeaponView.cs" />
+    <Compile Include="Migrations\201905150855494_CreatViewStuentWeaponView.Designer.cs">
+      <DependentUpon>201905150855494_CreatViewStuentWeaponView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Course\Chinese.cs" />
     <Compile Include="Model\Course\CourseBase.cs" />
@@ -96,6 +100,7 @@
     <Compile Include="Model\Weapon\WeaponType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\StudentWeaponView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
@@ -112,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905150701219_AddTablePaint.resx">
       <DependentUpon>201905150701219_AddTablePaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905150855494_CreatViewStuentWeaponView.resx">
+      <DependentUpon>201905150855494_CreatViewStuentWeaponView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
