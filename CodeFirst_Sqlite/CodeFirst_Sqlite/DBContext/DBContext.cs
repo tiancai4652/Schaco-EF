@@ -1,6 +1,7 @@
 ﻿using CodeFirst_Sqlite.Model;
 using CodeFirst_Sqlite.Model.Course;
 using CodeFirst_Sqlite.Model.Weapon;
+using CodeFirst_Sqlite.View;
 using SQLite.CodeFirst;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace CodeFirst_Sqlite.DBContext
         public IDbSet<WuDang> WuDang { get; set; }
 
         public IDbSet<Weapon> Weapon { get; set; }
-
+        public IDbSet<StudentWeaponView> StudentWeaponView { get; set; }
 
         public IDbSet<Student> Student { get; set; }
 
