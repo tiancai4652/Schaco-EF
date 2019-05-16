@@ -7,7 +7,6 @@ namespace CodeFirst_Sqlite.Migrations
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Data.SQLite.EF6.Migrations;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CodeFirst_Sqlite.DBContext.DBContext>
@@ -16,7 +15,7 @@ namespace CodeFirst_Sqlite.Migrations
         {
             AutomaticMigrationsEnabled = false;
             //AutomaticMigrationDataLossAllowed = false;
-            SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+            //SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
         }
 
         protected override void Seed(CodeFirst_Sqlite.DBContext.DBContext context)
