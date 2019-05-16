@@ -83,6 +83,10 @@
     <Compile Include="Migrations\201905150658341_AddTablePaint.Designer.cs">
       <DependentUpon>201905150658341_AddTablePaint.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905160305294_AddView.cs" />
+    <Compile Include="Migrations\201905160305294_AddView.Designer.cs">
+      <DependentUpon>201905160305294_AddView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Course\Chinese.cs" />
     <Compile Include="Model\Course\CourseBase.cs" />
@@ -121,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905150658341_AddTablePaint.resx">
       <DependentUpon>201905150658341_AddTablePaint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160305294_AddView.resx">
+      <DependentUpon>201905160305294_AddView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
