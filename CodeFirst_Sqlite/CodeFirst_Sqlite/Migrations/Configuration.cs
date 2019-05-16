@@ -3,10 +3,12 @@ namespace CodeFirst_Sqlite.Migrations
     using CodeFirst_Sqlite.Model;
     using CodeFirst_Sqlite.Model.Course;
     using CodeFirst_Sqlite.Model.Weapon;
+    using SQLite.CodeFirst;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Migrations.Infrastructure;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<CodeFirst_Sqlite.DBContext.DBContext>
@@ -15,7 +17,7 @@ namespace CodeFirst_Sqlite.Migrations
         {
             AutomaticMigrationsEnabled = false;
             //AutomaticMigrationDataLossAllowed = false;
-            //SetSqlGenerator("System.Data.SQLite", new SQLiteMigrationSqlGenerator());
+            SetSqlGenerator("System.Data.SQLite", new SqliteMigrationSqlGenerator());
         }
 
         protected override void Seed(CodeFirst_Sqlite.DBContext.DBContext context)
@@ -81,6 +83,29 @@ namespace CodeFirst_Sqlite.Migrations
 
             int x = context.SaveChanges();
 
+        }
+    }
+
+
+    /// <summary>
+    /// https://stackoverflow.com/questions/10822618/confusion-over-ef-auto-migrations-and-seeding-seeding-every-program-start
+    /// </summary>
+    /// <typeparam name="TContext"></typeparam>
+    /// <typeparam name="TMigrationsConfiguration"></typeparam>
+    public class CheckAndMigrateDatabaseToLatestVersion<TContext, TMigrationsConfiguration>
+    : SqliteMigrateDatabaseToLatestVersion<TContext, TMigrationsConfiguration>
+    where TContext : DbContext
+    where TMigrationsConfiguration : DbMigrationsConfiguration<TContext>, new()
+    {
+        public CheckAndMigrateDatabaseToLatestVersion(DbModelBuilder modelBuilder,bool useSuppliedContext) : base(modelBuilder,useSuppliedContext)
+        {
+
+        }
+        public override void InitializeDatabase(TContext context)
+        {
+            var migratorBase = ((MigratorBase)new DbMigrator(Activator.CreateInstance<TMigrationsConfiguration>()));
+            if (migratorBase.GetPendingMigrations().Any())
+                migratorBase.Update();
         }
     }
 }

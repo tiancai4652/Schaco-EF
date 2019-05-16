@@ -1,4 +1,5 @@
-﻿using CodeFirst_Sqlite.Model;
+﻿using CodeFirst_Sqlite.Migrations;
+using CodeFirst_Sqlite.Model;
 using CodeFirst_Sqlite.Model.Course;
 using CodeFirst_Sqlite.Model.Weapon;
 using CodeFirst_Sqlite.View;
@@ -37,7 +38,7 @@ namespace CodeFirst_Sqlite.DBContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>(true));
-            Database.SetInitializer(new SqliteMigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>(modelBuilder, true));
+            Database.SetInitializer(new CheckAndMigrateDatabaseToLatestVersion<DBContext, Migrations.Configuration>(modelBuilder, true));
         }
     }
 }
