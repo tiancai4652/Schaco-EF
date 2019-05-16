@@ -32,7 +32,7 @@ namespace CodeFirst_Sqlite
             //var s3 = x.Student.Include(t => t.Courses).ThenInclude(m => m.Weapon).FirstOrDefault();
 
 
-            var s3 = x.StudentWeaponView.FirstOrDefault();
+            //var s3 = x.StudentWeaponView.FirstOrDefault();
         }
     }
 }

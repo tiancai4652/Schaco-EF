@@ -83,6 +83,10 @@
     <Compile Include="Migrations\201905150855494_CreatViewStuentWeaponView.Designer.cs">
       <DependentUpon>201905150855494_CreatViewStuentWeaponView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905160257481_DeleteView.cs" />
+    <Compile Include="Migrations\201905160257481_DeleteView.Designer.cs">
+      <DependentUpon>201905160257481_DeleteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Course\Chinese.cs" />
     <Compile Include="Model\Course\CourseBase.cs" />
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905150855494_CreatViewStuentWeaponView.resx">
       <DependentUpon>201905150855494_CreatViewStuentWeaponView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160257481_DeleteView.resx">
+      <DependentUpon>201905160257481_DeleteView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

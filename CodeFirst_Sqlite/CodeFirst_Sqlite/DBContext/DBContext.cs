@@ -24,7 +24,7 @@ namespace CodeFirst_Sqlite.DBContext
         public IDbSet<WuDang> WuDang { get; set; }
 
         public IDbSet<Weapon> Weapon { get; set; }
-        public IDbSet<StudentWeaponView> StudentWeaponView { get; set; }
+        //public IDbSet<StudentWeaponView> StudentWeaponView { get; set; }
         
 
         public IDbSet<Student> Student { get; set; }
