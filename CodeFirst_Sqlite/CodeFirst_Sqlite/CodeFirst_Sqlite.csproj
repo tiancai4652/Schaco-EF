@@ -87,6 +87,10 @@
     <Compile Include="Migrations\201905160305294_AddView.Designer.cs">
       <DependentUpon>201905160305294_AddView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905160307046_DeleteView.cs" />
+    <Compile Include="Migrations\201905160307046_DeleteView.Designer.cs">
+      <DependentUpon>201905160307046_DeleteView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Course\Chinese.cs" />
     <Compile Include="Model\Course\CourseBase.cs" />
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201905160305294_AddView.resx">
       <DependentUpon>201905160305294_AddView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905160307046_DeleteView.resx">
+      <DependentUpon>201905160307046_DeleteView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
