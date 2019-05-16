@@ -7,6 +7,7 @@ namespace CodeFirst_Sqlite.Migrations
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Migrations.Infrastructure;
     using System.Data.SQLite.EF6.Migrations;
     using System.Linq;
 
@@ -82,6 +83,28 @@ namespace CodeFirst_Sqlite.Migrations
 
             int x = context.SaveChanges();
 
+        }
+    }
+
+    /// <summary>
+    /// https://stackoverflow.com/questions/10822618/confusion-over-ef-auto-migrations-and-seeding-seeding-every-program-start
+    /// </summary>
+    /// <typeparam name="TContext"></typeparam>
+    /// <typeparam name="TMigrationsConfiguration"></typeparam>
+    public class CheckAndMigrateDatabaseToLatestVersion<TContext, TMigrationsConfiguration>
+    : MigrateDatabaseToLatestVersion<TContext, TMigrationsConfiguration>
+    where TContext : DbContext
+    where TMigrationsConfiguration : DbMigrationsConfiguration<TContext>, new()
+    {
+        public CheckAndMigrateDatabaseToLatestVersion(bool useSuppliedContext):base(useSuppliedContext)
+        {
+
+        }
+        public override void InitializeDatabase(TContext context)
+        {
+            var migratorBase = ((MigratorBase)new DbMigrator(Activator.CreateInstance<TMigrationsConfiguration>()));
+            if (migratorBase.GetPendingMigrations().Any())
+                migratorBase.Update();
         }
     }
 }
