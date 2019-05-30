@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.539
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst_Sqlite", "CodeFirst_Sqlite\CodeFirst_Sqlite.csproj", "{5B6F710C-238C-4ADC-9A73-3DE7C2705181}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstWithFluentAPI", "CodeFirstWithFluentAPI\CodeFirstWithFluentAPI.csproj", "{C45EB933-137F-4FA6-8681-FE3679F659BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{5B6F710C-238C-4ADC-9A73-3DE7C2705181}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B6F710C-238C-4ADC-9A73-3DE7C2705181}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B6F710C-238C-4ADC-9A73-3DE7C2705181}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C45EB933-137F-4FA6-8681-FE3679F659BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C45EB933-137F-4FA6-8681-FE3679F659BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C45EB933-137F-4FA6-8681-FE3679F659BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C45EB933-137F-4FA6-8681-FE3679F659BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
