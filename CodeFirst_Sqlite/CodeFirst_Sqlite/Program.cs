@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CodeFirst_Sqlite.DBContext;
+using CodeFirst_Sqlite.Model;
 
 namespace CodeFirst_Sqlite
 {
@@ -24,15 +26,27 @@ namespace CodeFirst_Sqlite
 
         private static void Main()
         {
-            DBContext.DBContext x = new DBContext.DBContext();
-            x.Database.Log = (c) => { System.Diagnostics.Debug.WriteLine("0514:"+c); };
-            var s = x.EMei.FirstOrDefault();
-            var s1 = x.WuDang.Include(t => t.Students).FirstOrDefault();
-            var s2 = x.ShaoLin.Include(t => t.Students.Select(r=>r.Weapon)).FirstOrDefault();
-            //var s3 = x.Student.Include(t => t.Courses).ThenInclude(m => m.Weapon).FirstOrDefault();
+            DBContext.DBContext content = new DBContext.DBContext();
+            //x.Database.Log = (c) => { System.Diagnostics.Debug.WriteLine("0514:"+c); };
+
+            //Find
+            var s = content.EMei.FirstOrDefault();
+            //var s1 = content.WuDang.Include(t => t.Students).FirstOrDefault();
+            //var s2 = content.ShaoLin.Include(t => t.Students.Select(r => r.Weapon)).FirstOrDefault();
+
+            //Delete
+            if (s != null)
+            {
+                content.EMei.Remove(s);
+                content.SaveChanges();
+            }
+
+            //Add/Update
+            Student a = new Student();
+            content.Student.AddOrUpdate(a);
+            content.SaveChanges();
 
 
-            //var s3 = x.StudentWeaponView.FirstOrDefault();
         }
     }
 }

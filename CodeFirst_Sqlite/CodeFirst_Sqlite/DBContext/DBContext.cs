@@ -20,13 +20,14 @@ namespace CodeFirst_Sqlite.DBContext
         public IDbSet<Sport> Sport { get; set; }
         public IDbSet<Paint> Paint { get; set; }
 
-        public IDbSet<EMei> EMei { get; set; }
-        public IDbSet<ShaoLin> ShaoLin { get; set; }
+
         public IDbSet<WuDang> WuDang { get; set; }
+        public IDbSet<ShaoLin> ShaoLin { get; set; }
+        public IDbSet<EMei> EMei { get; set; }
+
+
 
         public IDbSet<Weapon> Weapon { get; set; }
-        //public IDbSet<StudentWeaponView> StudentWeaponView { get; set; }
-        
 
         public IDbSet<Student> Student { get; set; }
 

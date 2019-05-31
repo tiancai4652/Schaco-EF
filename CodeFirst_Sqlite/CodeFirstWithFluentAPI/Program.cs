@@ -30,7 +30,7 @@ namespace CodeFirstWithFluentAPI
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("ZR644Schema");
-            modelBuilder.Entity<Student>().ToTable("StudentTable").HasKey<string>(t=>t.Key);
+            modelBuilder.Entity<Student>().ToTable("StudentTable")/*.HasKey<string>(t => t.Key)*/;
             modelBuilder.Entity<Grade>().ToTable("GradeTable").HasKey<string>(t => t.Key);
             modelBuilder.Entity<Teacher>().ToTable("TeacherTable").HasKey<string>(t => t.Key);
         }
